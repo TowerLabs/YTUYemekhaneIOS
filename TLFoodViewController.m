@@ -39,10 +39,35 @@
     [super viewDidLoad];
     self.dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     self.day = [_dateComponents day];
-    self.todaysDate = [NSString stringWithFormat:@"%ld.%ld.%ld",(long)[_dateComponents day],(long)[_dateComponents month],(long)[_dateComponents year]];
 
-    //tarihi sifirsiz basiyor 10.03.2014 degil de 10.3.2014
-    NSLog(@"%@",_todaysDate);
+    NSDate *currDate = [NSDate date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
+    [dateFormatter setDateFormat:@"dd.MM.YYYY"];
+    
+    NSString *today = [dateFormatter stringFromDate:currDate];
+
+    NSLog(@"%@",today);
+    int keyOfToday;
+    
+    for (int i=0; i<_foodArray.count; i++) {
+        if ([[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0] == today) {
+            keyOfToday = i;
+        }
+    }
+    int end;
+    
+    if(_foodArray.count <= keyOfToday+10 ){
+        end = _foodArray.count;
+    }else{
+        end = keyOfToday + 10;
+    }
+    
+    for (int i=keyOfToday; i<end; i++) {
+        NSLog(@"%@",[[[_foodArray objectAtIndex:i] allValues]objectAtIndex:0]);
+    }
+    
     
     for (UILabel *label in [self.view subviews])
     {

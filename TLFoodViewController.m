@@ -104,8 +104,12 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+
+    NSString *pathForPlist = [[NSBundle mainBundle] pathForResource:@"Api" ofType:@"plist"];
+    NSMutableDictionary *apiDict = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForPlist];
+    NSString *apiUrl = [[NSString alloc] initWithString:[apiDict valueForKey:@"apiUrl"]];
     
-    [manager GET:APIURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:apiUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"dataLastReceived"];
         [[NSUserDefaults standardUserDefaults] setValue:[operation responseString] forKey:@"APIData"];
@@ -121,6 +125,7 @@
 
 -(void)parseJson:( NSString*) jsonResponse
 {
+    NSLog(@"Data: %@",[jsonResponse JSONValue]);
 //    self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
 }
 

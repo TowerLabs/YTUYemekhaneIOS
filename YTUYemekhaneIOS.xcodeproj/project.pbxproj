@@ -11,6 +11,7 @@
 		685DE50918CA827A007BD897 /* TLAboutCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685DE50718CA827A007BD897 /* TLAboutCellViewController.xib */; };
 		685DE50E18CA92F9007BD897 /* TeamAboutList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685DE50D18CA92F9007BD897 /* TeamAboutList.plist */; };
 		685DE50F18CA94EE007BD897 /* TeamAboutList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685DE50D18CA92F9007BD897 /* TeamAboutList.plist */; };
+		6883B91318C22CD500091136 /* Api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6883B91218C22CD500091136 /* Api.plist */; };
 		68F1B7EC18C20C90004F2436 /* TLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F1B7EA18C20C90004F2436 /* TLWebViewController.m */; };
 		68F1B7ED18C20C90004F2436 /* TLWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F1B7EB18C20C90004F2436 /* TLWebViewController.xib */; };
 		6D0A22EA18C8DC51003D132A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0A22E918C8DC51003D132A /* Foundation.framework */; };
@@ -70,6 +71,7 @@
 		685DE50618CA827A007BD897 /* TLAboutCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAboutCellViewController.m; sourceTree = "<group>"; };
 		685DE50718CA827A007BD897 /* TLAboutCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLAboutCellViewController.xib; sourceTree = "<group>"; };
 		685DE50D18CA92F9007BD897 /* TeamAboutList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TeamAboutList.plist; sourceTree = "<group>"; };
+		6883B91218C22CD500091136 /* Api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Api.plist; sourceTree = "<group>"; };
 		68F1B7E918C20C90004F2436 /* TLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLWebViewController.h; sourceTree = "<group>"; };
 		68F1B7EA18C20C90004F2436 /* TLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLWebViewController.m; sourceTree = "<group>"; };
 		68F1B7EB18C20C90004F2436 /* TLWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLWebViewController.xib; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		6D0A22DD18C8DC51003D132A = {
 			isa = PBXGroup;
 			children = (
+				6883B91218C22CD500091136 /* Api.plist */,
 				685DE50D18CA92F9007BD897 /* TeamAboutList.plist */,
 				6D0A22EF18C8DC51003D132A /* YTUYemekhaneIOS */,
 				6D0A230818C8DC51003D132A /* YTUYemekhaneIOSTests */,
@@ -446,6 +449,7 @@
 				685DE50F18CA94EE007BD897 /* TeamAboutList.plist in Resources */,
 				6D0A232318C8F0CF003D132A /* TLAboutViewController.xib in Resources */,
 				68F1B7ED18C20C90004F2436 /* TLWebViewController.xib in Resources */,
+				6883B91318C22CD500091136 /* Api.plist in Resources */,
 				6D0A232F18C8F641003D132A /* TLFoodCellViewController.xib in Resources */,
 				6D0A231C18C8DCCF003D132A /* TLFoodViewController.xib in Resources */,
 				6DB99F5B18CA129B00C59B64 /* Lato-Light.ttf in Resources */,

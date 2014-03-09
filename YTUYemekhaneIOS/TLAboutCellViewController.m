@@ -61,7 +61,6 @@
     
     NSURL *twitterURL = [NSURL URLWithString:[_infoDictionary valueForKey:@"link"]];
     TLWebViewController *webViewController = [[TLWebViewController alloc] initWithURL:twitterURL];
-#warning TODO: Change back title
     [DELEGATE.navigationController pushViewController:webViewController animated:YES];
 }
 

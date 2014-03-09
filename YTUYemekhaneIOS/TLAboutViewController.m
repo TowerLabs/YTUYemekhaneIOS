@@ -31,8 +31,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self getTeamInfo];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.topItem.title = @"Hakkımızda";
 }
 
 - (void)didReceiveMemoryWarning

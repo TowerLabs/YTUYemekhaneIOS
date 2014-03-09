@@ -36,12 +36,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     self.day = [_dateComponents day];
-    
-    [self.Test setFont: DELEGATE.projectFont];
-    
+        
     for (UILabel *label in [self.view subviews])
     {
         if ([label isKindOfClass:[UILabel class]])
@@ -51,6 +48,11 @@
     }
     
     [self loadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.topItem.title = @"Yemek Listesi";
 }
 
 - (void)didReceiveMemoryWarning

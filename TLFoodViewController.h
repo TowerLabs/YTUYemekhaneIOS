@@ -12,6 +12,5 @@
 
 @property (strong, nonatomic) IBOutlet UIView *todaysFoodView;
 @property (weak, nonatomic) IBOutlet UIView *todaysFoodViewContainer;
-@property (weak, nonatomic) IBOutlet UILabel *Test;
 
 @end

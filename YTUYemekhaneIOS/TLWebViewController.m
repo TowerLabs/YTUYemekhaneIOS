@@ -26,6 +26,22 @@
     return self;
 }
 
+- (IBAction)goBack:(id)sender
+{
+    if ([_webView canGoBack])
+    {
+        [_webView goBack];
+    }
+}
+
+- (IBAction)goForward:(id)sender
+{
+    if ([_webView canGoForward])
+    {
+        [_webView goForward];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Meryem Ekinci</string>
+		<key>twitter</key>
+		<string>@meryemmekinci</string>
+		<key>link</key>
+		<string>http://twitter.com/meryemmekinci</string>
+		<key>image</key>
+		<string>meryem.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Davut Uçar</string>
+		<key>twitter</key>
+		<string>@mesutuntorunu</string>
+		<key>link</key>
+		<string>http://twitter.com/mesutuntorunu</string>
+		<key>image</key>
+		<string>davut.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Said Özcan</string>
+		<key>twitter</key>
+		<string>@saidozcan</string>
+		<key>link</key>
+		<string>http://twitter.com/saidozcan</string>
+		<key>image</key>
+		<string>said.png</string>
+	</dict>
+</array>
+</plist>

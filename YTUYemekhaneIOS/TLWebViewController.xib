@@ -26,6 +26,9 @@
                     <state key="normal" title="Geri">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="DVQ-Tn-heB"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8p-O7-c1Q">
                     <rect key="frame" x="115" y="518" width="106" height="50"/>
@@ -33,6 +36,9 @@
                     <state key="normal" title="Ileri">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="goForward:" destination="-1" eventType="touchUpInside" id="3Ld-Iv-vBc"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-Ha-3Si">
                     <rect key="frame" x="213" y="518" width="107" height="50"/>

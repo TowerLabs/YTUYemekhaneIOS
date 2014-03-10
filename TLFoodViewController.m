@@ -14,6 +14,7 @@
 @property (nonatomic,strong) NSMutableArray *foodArray;
 @property (nonatomic,strong) NSMutableDictionary *todaysFood;
 @property (nonatomic,strong) NSDateComponents *dateComponents;
+@property (nonatomic,strong) NSString *todaysDate;
 @property NSInteger day;
 
 @end
@@ -36,11 +37,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     self.day = [_dateComponents day];
+
+    NSDate *currDate = [NSDate date];
     
-    [self.Test setFont: DELEGATE.projectFont];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
+    [dateFormatter setDateFormat:@"dd.MM.YYYY"];
+    
+    NSString *today = [dateFormatter stringFromDate:currDate];
+
+    NSLog(@"%@",today);
+    int keyOfToday;
+    
+    for (int i=0; i<_foodArray.count; i++) {
+        if ([[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0] == today) {
+            keyOfToday = i;
+        }
+    }
+    int end;
+    
+    if(_foodArray.count <= keyOfToday+10 ){
+        end = _foodArray.count;
+    }else{
+        end = keyOfToday + 10;
+    }
+    
+    for (int i=keyOfToday; i<end; i++) {
+        NSLog(@"%@",[[[_foodArray objectAtIndex:i] allValues]objectAtIndex:0]);
+    }
+    
     
     for (UILabel *label in [self.view subviews])
     {
@@ -50,7 +77,12 @@
         }
     }
     
-    [self loadData];
+    [self loadDataWithDate:_todaysDate];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.topItem.title = @"Yemek Listesi";
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,9 +92,8 @@
 }
 
 #pragma mark - Loading Data
-- (void)loadData
+- (void)loadDataWithDate:(NSString*)today
 {
-    [self.todaysFoodViewContainer addSubview:self.todaysFoodView];
     
     [self checkDateDataReceived];
 }
@@ -73,7 +104,7 @@
     
     if (nil == dataLastReceived)
     {
-        NSLog(@"Daha once hic yazilmamis nsuser a simdi cekilip yazilcak");
+        NSLog(@"Daha once hic yazilmamis");
         [self retrieveDataFromAPI];
     }
     else
@@ -94,6 +125,8 @@
         }
     }
 }
+
+
 
 #pragma mark - Client Methods
 
@@ -125,7 +158,7 @@
 
 -(void)parseJson:( NSString*) jsonResponse
 {
-    NSLog(@"Data: %@",[jsonResponse JSONValue]);
+//    NSLog(@"Data: %@",[jsonResponse JSONValue]);
 //    self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
 }
 

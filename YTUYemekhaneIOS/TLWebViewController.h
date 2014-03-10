@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 - (id)initWithURL:(NSURL *)twitterURL;
+- (IBAction)goBack:(id)sender;
+- (IBAction)goForward:(id)sender;
 
 @end

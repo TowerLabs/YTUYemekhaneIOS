@@ -10,16 +10,19 @@
 
 @interface TLFoodCellViewController ()
 
+@property (nonatomic,strong) NSDictionary *foodDictionary;
+
 @end
 
 @implementation TLFoodCellViewController
 
 #pragma mark - LifeCycle
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithFoodDictionary:(NSDictionary *)foodDictionary
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super initWithNibName:@"TLFoodCellViewController" bundle:nil];
+    if (self)
+    {
+        self.foodDictionary = [[NSDictionary alloc] initWithDictionary:foodDictionary];
     }
     return self;
 }
@@ -27,7 +30,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self setFoodList];
+}
+
+- (void)setFoodList
+{
+    _lunchList.text = [_foodDictionary valueForKey:@"main_lunch"];
+    _dinnerList.text = [_foodDictionary valueForKey:@"main_dinner"];
 }
 
 - (void)didReceiveMemoryWarning

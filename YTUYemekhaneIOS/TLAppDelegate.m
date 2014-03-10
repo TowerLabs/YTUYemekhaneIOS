@@ -29,15 +29,17 @@
 - (void)setProjectMembers
 {
     self.projectFont = [UIFont fontWithName:@"Lato-Light" size:16.0f];
-
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 - (void)setTabBarViews
 {
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
-    [[UITabBar appearance] setTintColor:[UIColor redColor]];
-    [[UITabBar appearance] setBarTintColor:[UIColor blueColor]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:194.0f/255.0f green:188.0f/255.0f blue:169.0f/255.0f alpha:1.0f]];
+//    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:194.0f/255.0f green:188.0f/255.0f blue:169.0f/255.0f alpha:0.54f]];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:_projectFont, NSFontAttributeName, nil] forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,_projectFont, NSFontAttributeName,nil] forState:UIControlStateNormal];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,_projectFont, NSFontAttributeName,nil]];
     
     TLFoodViewController *foodViewController = [[TLFoodViewController alloc] initWithNibName:@"TLFoodViewController" bundle:nil];
     TLAboutViewController *aboutViewController = [[TLAboutViewController alloc] initWithNibName:@"TLAboutViewController" bundle:nil];
@@ -46,13 +48,12 @@
     [aboutViewController.tabBarItem setTitle:@"Hakkımızda"];
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarController];
-    
-#warning TODO: Set title
-    [_navigationController setTitle:@"YTU"];
+    _navigationController.navigationBar.barTintColor = [UIColor colorWithRed:233.0f/255.0f green:125.0f/255.0f blue:54.0f/255.0f alpha:1.0f];
 
     [tabBarController setViewControllers:[NSArray arrayWithObjects:foodViewController,aboutViewController, nil]];
     
     [self.window setRootViewController:_navigationController];
+    [self.window setTintColor:[UIColor whiteColor]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

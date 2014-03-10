@@ -14,6 +14,7 @@
 @property (nonatomic,strong) NSMutableArray *foodArray;
 @property (nonatomic,strong) NSMutableDictionary *todaysFood;
 @property (nonatomic,strong) NSDateComponents *dateComponents;
+@property (nonatomic,strong) NSString *todaysDate;
 @property NSInteger day;
 
 @end
@@ -38,7 +39,11 @@
     [super viewDidLoad];
     self.dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     self.day = [_dateComponents day];
-        
+    self.todaysDate = [NSString stringWithFormat:@"%ld.%ld.%ld",(long)[_dateComponents day],(long)[_dateComponents month],(long)[_dateComponents year]];
+
+    //tarihi sifirsiz basiyor 10.03.2014 degil de 10.3.2014
+    NSLog(@"%@",_todaysDate);
+    
     for (UILabel *label in [self.view subviews])
     {
         if ([label isKindOfClass:[UILabel class]])
@@ -47,7 +52,7 @@
         }
     }
     
-    [self loadData];
+    [self loadDataWithDate:_todaysDate];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -62,9 +67,8 @@
 }
 
 #pragma mark - Loading Data
-- (void)loadData
+- (void)loadDataWithDate:(NSString*)today
 {
-    [self.todaysFoodViewContainer addSubview:self.todaysFoodView];
     
     [self checkDateDataReceived];
 }
@@ -75,7 +79,7 @@
     
     if (nil == dataLastReceived)
     {
-        NSLog(@"Daha once hic yazilmamis nsuser a simdi cekilip yazilcak");
+        NSLog(@"Daha once hic yazilmamis");
         [self retrieveDataFromAPI];
     }
     else
@@ -96,6 +100,8 @@
         }
     }
 }
+
+
 
 #pragma mark - Client Methods
 
@@ -127,7 +133,7 @@
 
 -(void)parseJson:( NSString*) jsonResponse
 {
-    NSLog(@"Data: %@",[jsonResponse JSONValue]);
+//    NSLog(@"Data: %@",[jsonResponse JSONValue]);
 //    self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
 }
 

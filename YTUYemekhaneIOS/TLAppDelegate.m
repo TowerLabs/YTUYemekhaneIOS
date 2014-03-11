@@ -28,6 +28,7 @@
 }
 - (void)setProjectMembers
 {
+    NSLog(@"%@",[UIFont fontNamesForFamilyName:@"Lato"]);
     self.projectFont = [UIFont fontWithName:@"Lato-Light" size:16.0f];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }

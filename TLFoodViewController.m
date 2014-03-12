@@ -9,6 +9,8 @@
 #import "TLFoodViewController.h"
 #import "AFNetworking.h"
 #import "SBJson.h"
+#import "TLFoodCellViewController.h"
+
 @interface TLFoodViewController ()
 
 @property (nonatomic,strong) NSMutableArray *foodArray;
@@ -39,35 +41,6 @@
     [super viewDidLoad];
     self.dateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     self.day = [_dateComponents day];
-
-    NSDate *currDate = [NSDate date];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    
-    [dateFormatter setDateFormat:@"dd.MM.YYYY"];
-    
-    NSString *today = [dateFormatter stringFromDate:currDate];
-
-    NSLog(@"%@",today);
-    int keyOfToday;
-    
-    for (int i=0; i<_foodArray.count; i++) {
-        if ([[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0] == today) {
-            keyOfToday = i;
-        }
-    }
-    int end;
-    
-    if(_foodArray.count <= keyOfToday+10 ){
-        end = _foodArray.count;
-    }else{
-        end = keyOfToday + 10;
-    }
-    
-    for (int i=keyOfToday; i<end; i++) {
-        NSLog(@"%@",[[[_foodArray objectAtIndex:i] allValues]objectAtIndex:0]);
-    }
-    
     
     for (UILabel *label in [self.view subviews])
     {
@@ -159,7 +132,72 @@
 -(void)parseJson:( NSString*) jsonResponse
 {
 //    NSLog(@"Data: %@",[jsonResponse JSONValue]);
-//    self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
+    self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
+    
+    NSDate *currDate = [NSDate date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
+    [dateFormatter setDateFormat:@"dd.MM.YYYY"];
+    
+    NSString *today = [dateFormatter stringFromDate:currDate];
+
+    int keyOfToday;
+    
+    for (int i=0; i<_foodArray.count; i++)
+    {
+        if ([[[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0]isEqualToString:today])
+        {
+            keyOfToday = i;
+        }
+    }
+    NSInteger end;
+    
+    if(_foodArray.count <= keyOfToday+10 )
+    {
+        end = _foodArray.count-1;
+    }
+    else
+    {
+        end = keyOfToday + 10;
+    }
+    
+    NSLog(@"%d-%ld",keyOfToday,(long)end);
+    
+    int startX= 0;
+    int startY= 0;
+    int currentX = startX;
+    
+    for (int i=keyOfToday; i<end; i++)
+    {
+        
+        TLFoodCellViewController *foodCellViewController = [[TLFoodCellViewController alloc] initWithFoodDictionary:[[[_foodArray objectAtIndex:i] allValues] objectAtIndex:0]];
+        
+        [foodCellViewController.view setFrame:CGRectMake(currentX, startY, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height)];
+        [_scrollView addSubview:foodCellViewController.view];
+        NSLog(@"CurrentX: %d StartY: %d StartX: %d FWidth: %f FHeight: %f SWidth: %f SHeight: %f",currentX, startY, startX, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height,_scrollView.frame.size.width,_scrollView.frame.size.height);
+        
+        currentX += foodCellViewController.view.frame.size.width;
+    }
+    
+    [_scrollView setContentSize:CGSizeMake(3200,_scrollView.contentSize.height)];
+
+    
+}
+
+#pragma  mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+//    NSLog(@"scroll");
+    //Scroll işlemi bittiğinde içeriğin x koordinatı
+    int xCoordinate = scrollView.contentOffset.x;
+//    NSLog(@"X Coord: %d",xCoordinate);
+    
+    //x koordinatı / 320 bize index numarasını verecektir.
+    int pageNumber = (xCoordinate / (_scrollView.frame.size.width));
+//    NSLog(@"Page Number: %d",pageNumber);
+    
+    self.pageControl.currentPage = pageNumber;
 }
 
 @end

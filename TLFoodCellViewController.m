@@ -35,8 +35,8 @@
 
 - (void)setFoodList
 {
-    _lunchList.text = [_foodDictionary valueForKey:@"main_lunch"];
-    _dinnerList.text = [_foodDictionary valueForKey:@"main_dinner"];
+    _lunchList.text = [[[_foodDictionary valueForKey:@"main_lunch"] componentsSeparatedByString:@","]objectAtIndex:0];
+    _dinnerList.text = [[[_foodDictionary valueForKey:@"main_dinner"] componentsSeparatedByString:@","]objectAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning

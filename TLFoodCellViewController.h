@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *dinnerTitle;
 @property (weak, nonatomic) IBOutlet UITextView *dinnerList;
 
+- (id)initWithFoodDictionary:(NSDictionary *)foodDictionary;
+
 @end

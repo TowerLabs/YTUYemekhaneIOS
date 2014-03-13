@@ -181,8 +181,6 @@
     }
     
     [_scrollView setContentSize:CGSizeMake(3200,_scrollView.contentSize.height)];
-
-    
 }
 
 #pragma  mark - UIScrollViewDelegate

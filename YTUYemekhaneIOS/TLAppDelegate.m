@@ -36,17 +36,20 @@
 {
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:194.0f/255.0f green:188.0f/255.0f blue:169.0f/255.0f alpha:1.0f]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:233.0f/255.0f green:125.0f/255.0f blue:54.0f/255.0f alpha:1.0f]];
 //    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:194.0f/255.0f green:188.0f/255.0f blue:169.0f/255.0f alpha:0.54f]];
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:_projectFont, NSFontAttributeName, nil] forState:UIControlStateNormal];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,_projectFont, NSFontAttributeName,nil] forState:UIControlStateNormal];
-    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,_projectFont, NSFontAttributeName,nil]];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Lato-Light" size:14.0f], NSFontAttributeName, nil] forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:@"Lato-Medium" size:18.0f], NSFontAttributeName,nil] forState:UIControlStateNormal];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:@"Lato-Bold" size:18.0f], NSFontAttributeName,nil]];
     
     TLFoodViewController *foodViewController = [[TLFoodViewController alloc] initWithNibName:@"TLFoodViewController" bundle:nil];
     TLAboutViewController *aboutViewController = [[TLAboutViewController alloc] initWithNibName:@"TLAboutViewController" bundle:nil];
     
     [foodViewController.tabBarItem setTitle:@"Yemek Listesi"];
+    [foodViewController.tabBarItem setImage:[UIImage imageNamed:@"foodLight"]];
+    [foodViewController.tabBarItem setSelectedImage:[UIImage imageNamed:@"foodDark"]];
     [aboutViewController.tabBarItem setTitle:@"Hakkımızda"];
+    [aboutViewController.tabBarItem setImage:[UIImage imageNamed:@"TeamLight"]];
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarController];
     _navigationController.navigationBar.barTintColor = [UIColor colorWithRed:233.0f/255.0f green:125.0f/255.0f blue:54.0f/255.0f alpha:1.0f];

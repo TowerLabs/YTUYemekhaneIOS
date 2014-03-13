@@ -12,6 +12,28 @@
 		685DE50E18CA92F9007BD897 /* TeamAboutList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685DE50D18CA92F9007BD897 /* TeamAboutList.plist */; };
 		685DE50F18CA94EE007BD897 /* TeamAboutList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685DE50D18CA92F9007BD897 /* TeamAboutList.plist */; };
 		6883B91318C22CD500091136 /* Api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6883B91218C22CD500091136 /* Api.plist */; };
+		6892346318CFB67000F51295 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345418CFAFEE00F51295 /* Lato-Black.ttf */; };
+		6892346418CFB67000F51295 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345518CFAFEE00F51295 /* Lato-BlackItalic.ttf */; };
+		6892346518CFB67000F51295 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345618CFAFEE00F51295 /* Lato-Bold.ttf */; };
+		6892346618CFB67000F51295 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345718CFAFEE00F51295 /* Lato-BoldItalic.ttf */; };
+		6892346718CFB67000F51295 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345818CFAFEE00F51295 /* Lato-Hairline.ttf */; };
+		6892346818CFB67000F51295 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345918CFAFEE00F51295 /* Lato-HairlineItalic.ttf */; };
+		6892346918CFB67000F51295 /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345A18CFAFEE00F51295 /* Lato-Heavy.ttf */; };
+		6892346A18CFB67000F51295 /* Lato-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345B18CFAFEE00F51295 /* Lato-HeavyItalic.ttf */; };
+		6892346B18CFB67000F51295 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345D18CFAFEE00F51295 /* Lato-LightItalic.ttf */; };
+		6892346C18CFB67000F51295 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345E18CFAFEE00F51295 /* Lato-Medium.ttf */; };
+		6892346D18CFB67000F51295 /* Lato-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345F18CFAFEE00F51295 /* Lato-MediumItalic.ttf */; };
+		6892346E18CFB67000F51295 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892346018CFAFEE00F51295 /* Lato-Regular.ttf */; };
+		6892346F18CFB67000F51295 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892346118CFAFEE00F51295 /* Lato-Semibold.ttf */; };
+		6892347018CFB67000F51295 /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892346218CFAFEE00F51295 /* Lato-SemiboldItalic.ttf */; };
+		6892347E18CFC59F00F51295 /* TeamLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347618CFC59F00F51295 /* TeamLight.png */; };
+		6892347F18CFC59F00F51295 /* TeamDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347718CFC59F00F51295 /* TeamDark.png */; };
+		6892348018CFC59F00F51295 /* foodLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347818CFC59F00F51295 /* foodLight.png */; };
+		6892348118CFC59F00F51295 /* TeamDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347918CFC59F00F51295 /* TeamDark@2x.png */; };
+		6892348218CFC59F00F51295 /* foodDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347A18CFC59F00F51295 /* foodDark@2x.png */; };
+		6892348318CFC59F00F51295 /* foodLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347B18CFC59F00F51295 /* foodLight@2x.png */; };
+		6892348418CFC59F00F51295 /* TeamLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347C18CFC59F00F51295 /* TeamLight@2x.png */; };
+		6892348518CFC59F00F51295 /* foodDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347D18CFC59F00F51295 /* foodDark.png */; };
 		68F1B7EC18C20C90004F2436 /* TLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F1B7EA18C20C90004F2436 /* TLWebViewController.m */; };
 		68F1B7ED18C20C90004F2436 /* TLWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F1B7EB18C20C90004F2436 /* TLWebViewController.xib */; };
 		6D0A22EA18C8DC51003D132A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0A22E918C8DC51003D132A /* Foundation.framework */; };
@@ -72,6 +94,29 @@
 		685DE50718CA827A007BD897 /* TLAboutCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLAboutCellViewController.xib; sourceTree = "<group>"; };
 		685DE50D18CA92F9007BD897 /* TeamAboutList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TeamAboutList.plist; sourceTree = "<group>"; };
 		6883B91218C22CD500091136 /* Api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Api.plist; sourceTree = "<group>"; };
+		6892345418CFAFEE00F51295 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		6892345518CFAFEE00F51295 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		6892345618CFAFEE00F51295 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		6892345718CFAFEE00F51295 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		6892345818CFAFEE00F51295 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		6892345918CFAFEE00F51295 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		6892345A18CFAFEE00F51295 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		6892345B18CFAFEE00F51295 /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		6892345C18CFAFEE00F51295 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		6892345D18CFAFEE00F51295 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		6892345E18CFAFEE00F51295 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		6892345F18CFAFEE00F51295 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
+		6892346018CFAFEE00F51295 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		6892346118CFAFEE00F51295 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		6892346218CFAFEE00F51295 /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		6892347618CFC59F00F51295 /* TeamLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TeamLight.png; sourceTree = "<group>"; };
+		6892347718CFC59F00F51295 /* TeamDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TeamDark.png; sourceTree = "<group>"; };
+		6892347818CFC59F00F51295 /* foodLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodLight.png; sourceTree = "<group>"; };
+		6892347918CFC59F00F51295 /* TeamDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TeamDark@2x.png"; sourceTree = "<group>"; };
+		6892347A18CFC59F00F51295 /* foodDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foodDark@2x.png"; sourceTree = "<group>"; };
+		6892347B18CFC59F00F51295 /* foodLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foodLight@2x.png"; sourceTree = "<group>"; };
+		6892347C18CFC59F00F51295 /* TeamLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TeamLight@2x.png"; sourceTree = "<group>"; };
+		6892347D18CFC59F00F51295 /* foodDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodDark.png; sourceTree = "<group>"; };
 		68F1B7E918C20C90004F2436 /* TLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLWebViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		68F1B7EA18C20C90004F2436 /* TLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLWebViewController.m; sourceTree = "<group>"; };
 		68F1B7EB18C20C90004F2436 /* TLWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLWebViewController.xib; sourceTree = "<group>"; };
@@ -181,6 +226,45 @@
 			name = TLAboutCellViewController;
 			sourceTree = "<group>";
 		};
+		6892345318CFAFCF00F51295 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6DB99F5A18CA129B00C59B64 /* Lato-Light.ttf */,
+				6892345418CFAFEE00F51295 /* Lato-Black.ttf */,
+				6892345518CFAFEE00F51295 /* Lato-BlackItalic.ttf */,
+				6892345618CFAFEE00F51295 /* Lato-Bold.ttf */,
+				6892345718CFAFEE00F51295 /* Lato-BoldItalic.ttf */,
+				6892345818CFAFEE00F51295 /* Lato-Hairline.ttf */,
+				6892345918CFAFEE00F51295 /* Lato-HairlineItalic.ttf */,
+				6892345A18CFAFEE00F51295 /* Lato-Heavy.ttf */,
+				6892345B18CFAFEE00F51295 /* Lato-HeavyItalic.ttf */,
+				6892345C18CFAFEE00F51295 /* Lato-Italic.ttf */,
+				6892345D18CFAFEE00F51295 /* Lato-LightItalic.ttf */,
+				6892345E18CFAFEE00F51295 /* Lato-Medium.ttf */,
+				6892345F18CFAFEE00F51295 /* Lato-MediumItalic.ttf */,
+				6892346018CFAFEE00F51295 /* Lato-Regular.ttf */,
+				6892346118CFAFEE00F51295 /* Lato-Semibold.ttf */,
+				6892346218CFAFEE00F51295 /* Lato-SemiboldItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		6892347118CFC10D00F51295 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				6892347818CFC59F00F51295 /* foodLight.png */,
+				6892347B18CFC59F00F51295 /* foodLight@2x.png */,
+				6892347618CFC59F00F51295 /* TeamLight.png */,
+				6892347C18CFC59F00F51295 /* TeamLight@2x.png */,
+				6892347D18CFC59F00F51295 /* foodDark.png */,
+				6892347A18CFC59F00F51295 /* foodDark@2x.png */,
+				6892347718CFC59F00F51295 /* TeamDark.png */,
+				6892347918CFC59F00F51295 /* TeamDark@2x.png */,
+			);
+			name = Icons;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		68F1B7EE18C20C95004F2436 /* TLWebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,7 +310,6 @@
 		6D0A22EF18C8DC51003D132A /* YTUYemekhaneIOS */ = {
 			isa = PBXGroup;
 			children = (
-				6DB99F5A18CA129B00C59B64 /* Lato-Light.ttf */,
 				6D0A231E18C8DCF4003D132A /* TLAppDelegate */,
 				6D0A231D18C8DCDD003D132A /* TLFoodViweController */,
 				6D0A233018C8F736003D132A /* TLFoodCellViewController */,
@@ -235,6 +318,8 @@
 				68F1B7EE18C20C95004F2436 /* TLWebViewController */,
 				6D0A233118C8FC03003D132A /* AFNetworking */,
 				6D0A22FB18C8DC51003D132A /* Images.xcassets */,
+				6892345318CFAFCF00F51295 /* Fonts */,
+				6892347118CFC10D00F51295 /* Icons */,
 				6D0A236518C8FE1D003D132A /* SBJson */,
 				6D0A22F018C8DC51003D132A /* Supporting Files */,
 			);
@@ -446,9 +531,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6892347F18CFC59F00F51295 /* TeamDark.png in Resources */,
+				6892348418CFC59F00F51295 /* TeamLight@2x.png in Resources */,
+				6892348118CFC59F00F51295 /* TeamDark@2x.png in Resources */,
+				6892346318CFB67000F51295 /* Lato-Black.ttf in Resources */,
+				6892346418CFB67000F51295 /* Lato-BlackItalic.ttf in Resources */,
+				6892346518CFB67000F51295 /* Lato-Bold.ttf in Resources */,
+				6892346618CFB67000F51295 /* Lato-BoldItalic.ttf in Resources */,
+				6892348218CFC59F00F51295 /* foodDark@2x.png in Resources */,
+				6892346718CFB67000F51295 /* Lato-Hairline.ttf in Resources */,
+				6892348518CFC59F00F51295 /* foodDark.png in Resources */,
+				6892346818CFB67000F51295 /* Lato-HairlineItalic.ttf in Resources */,
+				6892346918CFB67000F51295 /* Lato-Heavy.ttf in Resources */,
+				6892346A18CFB67000F51295 /* Lato-HeavyItalic.ttf in Resources */,
+				6892346B18CFB67000F51295 /* Lato-LightItalic.ttf in Resources */,
+				6892346C18CFB67000F51295 /* Lato-Medium.ttf in Resources */,
+				6892346D18CFB67000F51295 /* Lato-MediumItalic.ttf in Resources */,
+				6892346E18CFB67000F51295 /* Lato-Regular.ttf in Resources */,
+				6892346F18CFB67000F51295 /* Lato-Semibold.ttf in Resources */,
+				6892347018CFB67000F51295 /* Lato-SemiboldItalic.ttf in Resources */,
+				6892348318CFC59F00F51295 /* foodLight@2x.png in Resources */,
+				6892347E18CFC59F00F51295 /* TeamLight.png in Resources */,
 				685DE50F18CA94EE007BD897 /* TeamAboutList.plist in Resources */,
 				6D0A232318C8F0CF003D132A /* TLAboutViewController.xib in Resources */,
 				68F1B7ED18C20C90004F2436 /* TLWebViewController.xib in Resources */,
+				6892348018CFC59F00F51295 /* foodLight.png in Resources */,
 				6883B91318C22CD500091136 /* Api.plist in Resources */,
 				6D0A232F18C8F641003D132A /* TLFoodCellViewController.xib in Resources */,
 				6D0A231C18C8DCCF003D132A /* TLFoodViewController.xib in Resources */,

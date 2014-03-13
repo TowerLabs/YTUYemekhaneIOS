@@ -47,9 +47,10 @@
     
     [foodViewController.tabBarItem setTitle:@"Yemek Listesi"];
     [foodViewController.tabBarItem setImage:[UIImage imageNamed:@"foodLight"]];
-    [foodViewController.tabBarItem setSelectedImage:[UIImage imageNamed:@"foodDark"]];
+//    [foodViewController.tabBarItem setSelectedImage:[UIImage imageNamed:@"foodDark"]];
     [aboutViewController.tabBarItem setTitle:@"Hakkımızda"];
     [aboutViewController.tabBarItem setImage:[UIImage imageNamed:@"TeamLight"]];
+//    [aboutViewController.tabBarItem setSelectedImage:[UIImage imageNamed:@"TeamDark"]];
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:tabBarController];
     _navigationController.navigationBar.barTintColor = [UIColor colorWithRed:233.0f/255.0f green:125.0f/255.0f blue:54.0f/255.0f alpha:1.0f];

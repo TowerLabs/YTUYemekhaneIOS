@@ -11,10 +11,10 @@
 @interface TLFoodCellViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *lunchTitle;
-@property (weak, nonatomic) IBOutlet UITextView *lunchList;
+@property (weak, nonatomic) IBOutlet UIView *lunchContainer;
 
 @property (weak, nonatomic) IBOutlet UILabel *dinnerTitle;
-@property (weak, nonatomic) IBOutlet UITextView *dinnerList;
+@property (weak, nonatomic) IBOutlet UIView *dinnerContainer;
 
 - (id)initWithFoodDictionary:(NSDictionary *)foodDictionary;
 

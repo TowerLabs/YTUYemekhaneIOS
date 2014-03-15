@@ -15,7 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *dinnerTitle;
 @property (weak, nonatomic) IBOutlet UIView *dinnerContainer;
+@property (strong, nonatomic) IBOutlet UILabel *dateTitle;
 
-- (id)initWithFoodDictionary:(NSDictionary *)foodDictionary;
+- (id)initWithFoodDictionary:(NSDictionary *)foodDictionary Date: (NSString *)foodDate;
 
 @end

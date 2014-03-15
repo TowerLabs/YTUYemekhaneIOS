@@ -171,7 +171,7 @@
     for (int i=keyOfToday; i<end; i++)
     {
         
-        TLFoodCellViewController *foodCellViewController = [[TLFoodCellViewController alloc] initWithFoodDictionary:[[[_foodArray objectAtIndex:i] allValues] objectAtIndex:0]];
+        TLFoodCellViewController *foodCellViewController = [[TLFoodCellViewController alloc] initWithFoodDictionary:[[[_foodArray objectAtIndex:i] allValues] objectAtIndex:0] Date:[[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0]];
         
         [foodCellViewController.view setFrame:CGRectMake(currentX, startY, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height)];
         [_scrollView addSubview:foodCellViewController.view];

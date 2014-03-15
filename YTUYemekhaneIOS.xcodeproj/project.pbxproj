@@ -76,6 +76,9 @@
 		6D0A238918C8FE1D003D132A /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A237C18C8FE1D003D132A /* SBJsonUTF8Stream.m */; };
 		6D0A238A18C8FE1D003D132A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A237E18C8FE1D003D132A /* SBJsonWriter.m */; };
 		6DB99F5B18CA129B00C59B64 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB99F5A18CA129B00C59B64 /* Lato-Light.ttf */; };
+		F5628C7218D4F33600BB1460 /* davut.png in Resources */ = {isa = PBXBuildFile; fileRef = F5628C6F18D4F33600BB1460 /* davut.png */; };
+		F5628C7318D4F33600BB1460 /* meryem.png in Resources */ = {isa = PBXBuildFile; fileRef = F5628C7018D4F33600BB1460 /* meryem.png */; };
+		F5628C7418D4F33600BB1460 /* said.png in Resources */ = {isa = PBXBuildFile; fileRef = F5628C7118D4F33600BB1460 /* said.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +193,9 @@
 		6D0A237D18C8FE1D003D132A /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		6D0A237E18C8FE1D003D132A /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		6DB99F5A18CA129B00C59B64 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		F5628C6F18D4F33600BB1460 /* davut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = davut.png; sourceTree = "<group>"; };
+		F5628C7018D4F33600BB1460 /* meryem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meryem.png; sourceTree = "<group>"; };
+		F5628C7118D4F33600BB1460 /* said.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = said.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +258,9 @@
 		6892347118CFC10D00F51295 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				F5628C6F18D4F33600BB1460 /* davut.png */,
+				F5628C7018D4F33600BB1460 /* meryem.png */,
+				F5628C7118D4F33600BB1460 /* said.png */,
 				6892347818CFC59F00F51295 /* foodLight.png */,
 				6892347B18CFC59F00F51295 /* foodLight@2x.png */,
 				6892347618CFC59F00F51295 /* TeamLight.png */,
@@ -533,6 +542,7 @@
 			files = (
 				6892347F18CFC59F00F51295 /* TeamDark.png in Resources */,
 				6892348418CFC59F00F51295 /* TeamLight@2x.png in Resources */,
+				F5628C7318D4F33600BB1460 /* meryem.png in Resources */,
 				6892348118CFC59F00F51295 /* TeamDark@2x.png in Resources */,
 				6892346318CFB67000F51295 /* Lato-Black.ttf in Resources */,
 				6892346418CFB67000F51295 /* Lato-BlackItalic.ttf in Resources */,
@@ -544,12 +554,14 @@
 				6892346818CFB67000F51295 /* Lato-HairlineItalic.ttf in Resources */,
 				6892346918CFB67000F51295 /* Lato-Heavy.ttf in Resources */,
 				6892346A18CFB67000F51295 /* Lato-HeavyItalic.ttf in Resources */,
+				F5628C7218D4F33600BB1460 /* davut.png in Resources */,
 				6892346B18CFB67000F51295 /* Lato-LightItalic.ttf in Resources */,
 				6892346C18CFB67000F51295 /* Lato-Medium.ttf in Resources */,
 				6892346D18CFB67000F51295 /* Lato-MediumItalic.ttf in Resources */,
 				6892346E18CFB67000F51295 /* Lato-Regular.ttf in Resources */,
 				6892346F18CFB67000F51295 /* Lato-Semibold.ttf in Resources */,
 				6892347018CFB67000F51295 /* Lato-SemiboldItalic.ttf in Resources */,
+				F5628C7418D4F33600BB1460 /* said.png in Resources */,
 				6892348318CFC59F00F51295 /* foodLight@2x.png in Resources */,
 				6892347E18CFC59F00F51295 /* TeamLight.png in Resources */,
 				685DE50F18CA94EE007BD897 /* TeamAboutList.plist in Resources */,

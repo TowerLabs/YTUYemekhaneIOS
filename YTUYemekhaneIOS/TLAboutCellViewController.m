@@ -45,7 +45,7 @@
     
     [_siteLabel setTitle:twitter forState:UIControlStateNormal];
     [_siteLabel.titleLabel setFont:DELEGATE.projectFont];
-    
+    [_icon setImage:[UIImage imageNamed:[_infoDictionary valueForKey:@"image"]]];
 }
 
 - (void)didReceiveMemoryWarning

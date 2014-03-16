@@ -119,7 +119,7 @@
     
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 
-    NSString *pathForPlist = [[NSBundle mainBundle] pathForResource:@"Api" ofType:@"plist"];
+    NSString *pathForPlist = [[NSBundle mainBundle] pathForResource:@"api" ofType:@"plist"];
     NSMutableDictionary *apiDict = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForPlist];
     NSString *apiUrl = [[NSString alloc] initWithString:[apiDict valueForKey:@"apiUrl"]];
     

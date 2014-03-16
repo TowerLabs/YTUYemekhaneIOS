@@ -16,7 +16,10 @@
 		685DE50818CA827A007BD897 /* TLAboutCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685DE50618CA827A007BD897 /* TLAboutCellViewController.m */; };
 		685DE50E18CA92F9007BD897 /* TeamAboutList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685DE50D18CA92F9007BD897 /* TeamAboutList.plist */; };
 		685DE50F18CA94EE007BD897 /* TeamAboutList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685DE50D18CA92F9007BD897 /* TeamAboutList.plist */; };
-		6883B91318C22CD500091136 /* Api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6883B91218C22CD500091136 /* Api.plist */; };
+		686BE09B18D659A70026D9A7 /* api.plist in Resources */ = {isa = PBXBuildFile; fileRef = 686BE09A18D659A70026D9A7 /* api.plist */; };
+		686BE09F18D659F00026D9A7 /* refresh_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 686BE09C18D659F00026D9A7 /* refresh_disabled.png */; };
+		686BE0A018D659F00026D9A7 /* back_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 686BE09D18D659F00026D9A7 /* back_disabled.png */; };
+		686BE0A118D659F00026D9A7 /* forward_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 686BE09E18D659F00026D9A7 /* forward_disabled.png */; };
 		6892346318CFB67000F51295 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345418CFAFEE00F51295 /* Lato-Black.ttf */; };
 		6892346418CFB67000F51295 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345518CFAFEE00F51295 /* Lato-BlackItalic.ttf */; };
 		6892346518CFB67000F51295 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6892345618CFAFEE00F51295 /* Lato-Bold.ttf */; };
@@ -111,7 +114,10 @@
 		685DE50518CA827A007BD897 /* TLAboutCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAboutCellViewController.h; sourceTree = "<group>"; };
 		685DE50618CA827A007BD897 /* TLAboutCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAboutCellViewController.m; sourceTree = "<group>"; };
 		685DE50D18CA92F9007BD897 /* TeamAboutList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TeamAboutList.plist; sourceTree = "<group>"; };
-		6883B91218C22CD500091136 /* Api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Api.plist; sourceTree = "<group>"; };
+		686BE09A18D659A70026D9A7 /* api.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api.plist; sourceTree = "<group>"; };
+		686BE09C18D659F00026D9A7 /* refresh_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_disabled.png; sourceTree = "<group>"; };
+		686BE09D18D659F00026D9A7 /* back_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_disabled.png; sourceTree = "<group>"; };
+		686BE09E18D659F00026D9A7 /* forward_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward_disabled.png; sourceTree = "<group>"; };
 		6892345418CFAFEE00F51295 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		6892345518CFAFEE00F51295 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		6892345618CFAFEE00F51295 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -296,6 +302,9 @@
 				68A6683E18D64B2600CDA1A0 /* back_tapped.png */,
 				68A6684318D64CF700CDA1A0 /* refresh.png */,
 				68A6684418D64CF700CDA1A0 /* refresh_tapped.png */,
+				686BE09C18D659F00026D9A7 /* refresh_disabled.png */,
+				686BE09D18D659F00026D9A7 /* back_disabled.png */,
+				686BE09E18D659F00026D9A7 /* forward_disabled.png */,
 			);
 			name = Icons;
 			path = Classes;
@@ -315,8 +324,8 @@
 		6D0A22DD18C8DC51003D132A = {
 			isa = PBXGroup;
 			children = (
-				6883B91218C22CD500091136 /* Api.plist */,
 				685DE50D18CA92F9007BD897 /* TeamAboutList.plist */,
+				686BE09A18D659A70026D9A7 /* api.plist */,
 				6D0A22EF18C8DC51003D132A /* YTUYemekhaneIOS */,
 				6D0A230818C8DC51003D132A /* YTUYemekhaneIOSTests */,
 				6D0A22E818C8DC51003D132A /* Frameworks */,
@@ -573,16 +582,19 @@
 				6892347F18CFC59F00F51295 /* TeamDark.png in Resources */,
 				6892348418CFC59F00F51295 /* TeamLight@2x.png in Resources */,
 				F5628C7318D4F33600BB1460 /* meryem.png in Resources */,
+				686BE0A118D659F00026D9A7 /* forward_disabled.png in Resources */,
 				6892348118CFC59F00F51295 /* TeamDark@2x.png in Resources */,
 				68A6684018D64B2600CDA1A0 /* forward.png in Resources */,
 				6837652618D5EAC200F66DC1 /* TLAboutViewController_4.xib in Resources */,
 				6892346318CFB67000F51295 /* Lato-Black.ttf in Resources */,
+				686BE09F18D659F00026D9A7 /* refresh_disabled.png in Resources */,
 				6892346418CFB67000F51295 /* Lato-BlackItalic.ttf in Resources */,
 				6892346518CFB67000F51295 /* Lato-Bold.ttf in Resources */,
 				6892346618CFB67000F51295 /* Lato-BoldItalic.ttf in Resources */,
 				6892348218CFC59F00F51295 /* foodDark@2x.png in Resources */,
 				6892346718CFB67000F51295 /* Lato-Hairline.ttf in Resources */,
 				6892348518CFC59F00F51295 /* foodDark.png in Resources */,
+				686BE0A018D659F00026D9A7 /* back_disabled.png in Resources */,
 				6837652818D5EC5B00F66DC1 /* TLAboutCellViewController_3.xib in Resources */,
 				68A6684618D64CF700CDA1A0 /* refresh_tapped.png in Resources */,
 				6837652218D5EAB200F66DC1 /* TLAboutCellViewController_4.xib in Resources */,
@@ -609,8 +621,8 @@
 				68A6683F18D64B2600CDA1A0 /* forward_tapped.png in Resources */,
 				6892348018CFC59F00F51295 /* foodLight.png in Resources */,
 				6837652A18D5ED1C00F66DC1 /* TLWebViewController_3.xib in Resources */,
-				6883B91318C22CD500091136 /* Api.plist in Resources */,
 				6D0A232F18C8F641003D132A /* TLFoodCellViewController.xib in Resources */,
+				686BE09B18D659A70026D9A7 /* api.plist in Resources */,
 				6D0A231C18C8DCCF003D132A /* TLFoodViewController_4.xib in Resources */,
 				6DB99F5B18CA129B00C59B64 /* Lato-Light.ttf in Resources */,
 				6D0A22F418C8DC51003D132A /* InfoPlist.strings in Resources */,

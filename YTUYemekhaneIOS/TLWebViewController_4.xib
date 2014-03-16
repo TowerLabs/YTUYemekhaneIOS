@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TLWebViewController">
             <connections>
+                <outlet property="backButton" destination="kRx-DK-Osc" id="JAF-Tm-WLA"/>
+                <outlet property="forwardButton" destination="U8p-O7-c1Q" id="x4O-Jo-h8L"/>
+                <outlet property="refreshButton" destination="Mo0-Ha-3Si" id="Hap-7X-58b"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="webView" destination="HOh-gI-M6x" id="N6s-Pu-3NR"/>
             </connections>
@@ -16,36 +19,45 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOh-gI-M6x">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRx-DK-Osc">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRx-DK-Osc">
                     <rect key="frame" x="0.0" y="518" width="107" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Geri">
+                    <state key="normal" title="Geri" image="back.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="disabled" image="back_disabled.png"/>
+                    <state key="highlighted" image="back_tapped.png"/>
                     <connections>
                         <action selector="goBack:" destination="-1" eventType="touchUpInside" id="DVQ-Tn-heB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8p-O7-c1Q">
-                    <rect key="frame" x="115" y="518" width="106" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8p-O7-c1Q">
+                    <rect key="frame" x="107" y="518" width="106" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Ileri">
+                    <state key="normal" title="Ileri" image="forward.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="disabled" image="forward_disabled.png"/>
+                    <state key="highlighted" image="forward_tapped.png"/>
                     <connections>
                         <action selector="goForward:" destination="-1" eventType="touchUpInside" id="3Ld-Iv-vBc"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-Ha-3Si">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-Ha-3Si">
                     <rect key="frame" x="213" y="518" width="107" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Yenile">
+                    <state key="normal" title="Yenile" image="refresh.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="disabled" image="refresh_disabled.png"/>
+                    <state key="highlighted" image="refresh_tapped.png"/>
+                    <connections>
+                        <action selector="refresh:" destination="-1" eventType="touchUpInside" id="fv3-I5-aRs"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -53,4 +65,15 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="back.png" width="214" height="100"/>
+        <image name="back_disabled.png" width="214" height="100"/>
+        <image name="back_tapped.png" width="214" height="100"/>
+        <image name="forward.png" width="212" height="100"/>
+        <image name="forward_disabled.png" width="212" height="100"/>
+        <image name="forward_tapped.png" width="212" height="100"/>
+        <image name="refresh.png" width="214" height="100"/>
+        <image name="refresh_disabled.png" width="214" height="100"/>
+        <image name="refresh_tapped.png" width="214" height="100"/>
+    </resources>
 </document>

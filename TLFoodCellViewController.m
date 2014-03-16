@@ -57,7 +57,14 @@
     [self.dateTitle setFont:headingFont];
     _lunchTitle.text = @"Öğle Yemeği";
     _dinnerTitle.text = @"Akşam Yemeği";
-    _dateTitle.text = _foodDate;
+    
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd.MM.yyyy"];
+    [dateFormat setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"tr_TR"]];
+    NSDate *date = [dateFormat dateFromString:_foodDate];
+    [dateFormat setDateFormat:@"dd MMMM EEEE"];
+    _dateTitle.text = [dateFormat stringFromDate:date];
     
     for (NSString *anyFood in lunchList)
     {

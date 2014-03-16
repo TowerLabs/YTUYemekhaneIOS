@@ -164,24 +164,9 @@
 {
 //    NSLog(@"Data: %@",[jsonResponse JSONValue]);
     self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
-    
-    NSDate *currDate = [NSDate date];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    
-    [dateFormatter setDateFormat:@"dd.MM.YYYY"];
-    
-    NSString *today = [dateFormatter stringFromDate:currDate];
 
-    int keyOfToday;
-    
-    for (int i=0; i<_foodArray.count; i++)
-    {
-        if ([[[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0]isEqualToString:today])
-        {
-            keyOfToday = i;
-        }
-    }
+    int keyOfToday = [self getKeyOfToday];
+ 
     NSInteger end;
     
     if(_foodArray.count <= keyOfToday+10 )
@@ -228,5 +213,21 @@
     
     self.pageControl.currentPage = pageNumber;
 }
-
+- (int)getKeyOfToday{
+    NSString *dateKey = @"";
+    NSArray *key = [[NSArray alloc]init];
+    NSInteger tempDay;
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:[NSDate date]];
+    NSInteger today = [components day];
+    for (int i=0; i<_foodArray.count; i++)
+    {
+        dateKey = [[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0];
+        key = [dateKey componentsSeparatedByString:@"."];
+        tempDay = [[key objectAtIndex:0]integerValue];
+        if (tempDay >= today) {
+            return i;
+        }
+    }
+    return 0;
+}
 @end

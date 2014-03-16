@@ -126,7 +126,30 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
     {
         NSLog(@"Error: %@", error);
+        [self operationErrorWithCode:error.code];
     }];
+}
+
+- (void)operationErrorWithCode: (NSInteger)errorCode
+{
+    if (errorCode == -1009 || errorCode == -1007 || errorCode == -1004)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Bağlanılamıyor" message:@"Yemek listesini görüntüleyebilmek için lütfen internet bağlantınızı kontrol edin." delegate:nil cancelButtonTitle:@"Tamam" otherButtonTitles: nil];
+        [alert show];
+        
+    }
+    else if (errorCode == -1001)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sunucuya erişim sağlanamıyor" message:@"Lütfen daha sonra tekrar deneyin." delegate:nil cancelButtonTitle:@"Tamam" otherButtonTitles: nil];
+        [alert show];
+        
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sunucu hatası" message:@"Lütfen daha sonra tekrar deneyin." delegate:nil cancelButtonTitle:@"Tamam" otherButtonTitles: nil];
+        [alert show];
+    }
+
 }
 
 -(void)parseJson:( NSString*) jsonResponse

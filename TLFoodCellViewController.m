@@ -40,8 +40,13 @@
 - (void)setFoodList
 {
     
-    NSMutableArray *lunchList = [[NSMutableArray alloc] initWithArray:[[_foodDictionary valueForKey:@"main_lunch"] componentsSeparatedByString:@","]];
-    NSMutableArray *altLunchList = [[NSMutableArray alloc] initWithArray:[[_foodDictionary valueForKey:@"alt_lunch"] componentsSeparatedByString:@","]];
+//    NSMutableArray *lunchList = [[NSMutableArray alloc] initWithArray:[[_foodDictionary valueForKey:@"main_lunch"] componentsSeparatedByString:@","]];
+//    NSMutableArray *altLunchList = [[NSMutableArray alloc] initWithArray:[[_foodDictionary valueForKey:@"alt_lunch"] componentsSeparatedByString:@","]];
+    
+    NSMutableArray *lunchList = [[NSMutableArray alloc] init];
+    NSLog(@"%d",lunchList.count);
+    
+    NSMutableArray *altLunchList = [[NSMutableArray alloc] init];
 
     NSMutableArray *dinnerList = [[NSMutableArray alloc] initWithArray:[[_foodDictionary valueForKey:@"main_dinner"] componentsSeparatedByString:@","]];
     NSMutableArray *altDinnerList = [[NSMutableArray alloc] initWithArray:[[_foodDictionary valueForKey:@"alt_dinner"] componentsSeparatedByString:@","]];
@@ -65,6 +70,14 @@
     NSDate *date = [dateFormat dateFromString:_foodDate];
     [dateFormat setDateFormat:@"dd MMMM EEEE"];
     _dateTitle.text = [dateFormat stringFromDate:date];
+    
+    if (nil == lunchList && nil == altLunchList)
+    {
+        UILabel *noFoodLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _lunchContainer.frame.size.width, 20)];
+        noFoodLabel.text = @"Bugün yemek yok";
+        [noFoodLabel setFont:labelFont12pt];
+        [_lunchContainer addSubview:noFoodLabel];
+    }
     
     for (NSString *anyFood in lunchList)
     {
@@ -91,6 +104,14 @@
     }
     
     yOffset = 0;
+    
+    if (0 == dinnerList.count && 0 == altDinnerList.count)
+    {
+        UILabel *noFoodLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _dinnerContainer.frame.size.width, 20)];
+        noFoodLabel.text = @"Bugün yemek yok";
+        [noFoodLabel setFont:labelFont12pt];
+        [_dinnerContainer addSubview:noFoodLabel];
+    }
     
     for (NSString *anyFood in dinnerList)
     {

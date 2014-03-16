@@ -23,10 +23,27 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setProjectMembers];
     [self setTabBarViews];
-    [self setLocalNotification];
     [self.window makeKeyAndVisible];
+    
+    UILocalNotification *localNotif = [launchOptions
+                                       objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    
+    if (localNotif)
+    {
+        NSLog(@"Has notifications.");
+    }
+    else {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
+    
     return YES;
 }
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notif
+{
+    NSLog(@"application: didReceiveLocalNotification:");
+}
+
 - (void)setProjectMembers
 {
    
@@ -64,31 +81,49 @@
 
 - (void)setLocalNotification
 {
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-
-    [dateComponents setDay:1];
-    [dateComponents setHour:10];
-    [dateComponents setMinute:0];
+//    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+//
+//    [dateComponents setDay:1];
+//    [dateComponents setHour:10];
+//    [dateComponents setMinute:0];
+//    
+//    
+//    UIApplication* app = [UIApplication sharedApplication];
+//    UILocalNotification *foodLocalNotification = [[UILocalNotification alloc] init];
+//    
+//    foodLocalNotification.soundName = @"";
+//    foodLocalNotification.repeatInterval = NSMinuteCalendarUnit;
+//    foodLocalNotification.timeZone = [NSTimeZone localTimeZone];
+//    foodLocalNotification.fireDate = dateComponents.date;
+//    
+//    NSArray* oldNots = [app scheduledLocalNotifications];
+//    
+//    if ([oldNots count]>0)
+//    {
+//        [app cancelAllLocalNotifications];
+//    }
+//    
+//    foodLocalNotification.alertBody = @"asad";
+//    
+//    [app presentLocalNotificationNow:foodLocalNotification];
+    NSCalendar *localCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSLocaleCalendar];
+    
+    NSDateComponents *dateComponent = [localCalendar components:NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit fromDate:[NSDate date]];
     
     
-    UIApplication* app = [UIApplication sharedApplication];
-    UILocalNotification *foodLocalNotification = [[UILocalNotification alloc] init];
+    [dateComponent setWeekday:5];
+    [dateComponent setHour:22];
+    [dateComponent setMinute:34];
     
-    foodLocalNotification.soundName = @"";
-    foodLocalNotification.repeatInterval = NSMinuteCalendarUnit;
-    foodLocalNotification.timeZone = [NSTimeZone localTimeZone];
-    foodLocalNotification.fireDate = dateComponents.date;
     
-    NSArray* oldNots = [app scheduledLocalNotifications];
     
-    if ([oldNots count]>0)
-    {
-        [app cancelAllLocalNotifications];
-    }
-    
-    foodLocalNotification.alertBody = @"asad";
-    
-    [app presentLocalNotificationNow:foodLocalNotification];
+    UILocalNotification *notification = [[UILocalNotification alloc]init];
+    [notification setAlertBody:@"GOOD MORNING!"];
+    [notification setSoundName:UILocalNotificationDefaultSoundName];
+    [notification setFireDate:[localCalendar dateFromComponents:dateComponent]];
+    notification.repeatInterval = NSWeekdayCalendarUnit;
+    [notification setTimeZone:[NSTimeZone defaultTimeZone]];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 
@@ -107,6 +142,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [self setLocalNotification];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -117,6 +153,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+\
 }
 
 @end

@@ -23,6 +23,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setProjectMembers];
     [self setTabBarViews];
+    [self setLocalNotification];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -60,6 +61,36 @@
     [self.window setRootViewController:_navigationController];
     [self.window setTintColor:[UIColor whiteColor]];
 }
+
+- (void)setLocalNotification
+{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+
+    [dateComponents setDay:1];
+    [dateComponents setHour:10];
+    [dateComponents setMinute:0];
+    
+    
+    UIApplication* app = [UIApplication sharedApplication];
+    UILocalNotification *foodLocalNotification = [[UILocalNotification alloc] init];
+    
+    foodLocalNotification.soundName = @"";
+    foodLocalNotification.repeatInterval = NSMinuteCalendarUnit;
+    foodLocalNotification.timeZone = [NSTimeZone localTimeZone];
+    foodLocalNotification.fireDate = dateComponents.date;
+    
+    NSArray* oldNots = [app scheduledLocalNotifications];
+    
+    if ([oldNots count]>0)
+    {
+        [app cancelAllLocalNotifications];
+    }
+    
+    foodLocalNotification.alertBody = @"asad";
+    
+    [app presentLocalNotificationNow:foodLocalNotification];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

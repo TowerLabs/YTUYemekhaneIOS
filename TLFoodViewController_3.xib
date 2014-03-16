@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TLFoodViewController">
             <connections>
+                <outlet property="loadingIndicator" destination="BDx-7h-qHd" id="hx3-fh-5Ah"/>
                 <outlet property="pageControl" destination="OLb-oz-esU" id="Bk4-3K-uog"/>
                 <outlet property="scrollView" destination="8WG-WS-PIx" id="AKS-7e-PdV"/>
                 <outlet property="view" destination="xZ3-ek-ObS" id="VYP-Ox-6nJ"/>
@@ -19,6 +20,13 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="8WG-WS-PIx">
                     <rect key="frame" x="0.0" y="9" width="320" height="389"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="BDx-7h-qHd">
+                            <rect key="frame" x="142" y="176" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="0.91372549020000005" green="0.49019607840000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
+                    </subviews>
                     <connections>
                         <outlet property="delegate" destination="-1" id="r5k-0g-3JJ"/>
                     </connections>

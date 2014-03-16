@@ -140,6 +140,8 @@
 
 - (void)operationErrorWithCode: (NSInteger)errorCode
 {
+    [_loadingIndicator stopAnimating];
+    
     if (errorCode == -1009 || errorCode == -1007 || errorCode == -1004)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Bağlanılamıyor" message:@"Yemek listesini görüntüleyebilmek için lütfen internet bağlantınızı kontrol edin." delegate:nil cancelButtonTitle:@"Tamam" otherButtonTitles: nil];
@@ -179,12 +181,14 @@
     }
     
     NSLog(@"%d-%ld",keyOfToday,(long)end);
-    
+    _pageControl.numberOfPages = end - keyOfToday +1;
     int startX= 0;
     int startY= 0;
     int currentX = startX;
     
-    for (int i=keyOfToday; i<end; i++)
+    [_loadingIndicator stopAnimating];
+    
+    for (int i=keyOfToday; i<=end; i++)
     {
         
         TLFoodCellViewController *foodCellViewController = [[TLFoodCellViewController alloc] initWithFoodDictionary:[[[_foodArray objectAtIndex:i] allValues] objectAtIndex:0] Date:[[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0]];
@@ -196,7 +200,7 @@
         currentX += foodCellViewController.view.frame.size.width;
     }
     
-    [_scrollView setContentSize:CGSizeMake(3200,_scrollView.contentSize.height)];
+    [_scrollView setContentSize:CGSizeMake(320 * (_pageControl.numberOfPages),_scrollView.contentSize.height)];
 }
 
 #pragma  mark - UIScrollViewDelegate

@@ -42,6 +42,7 @@
 {
     [super viewDidLoad];
     [self getTeamInfo];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

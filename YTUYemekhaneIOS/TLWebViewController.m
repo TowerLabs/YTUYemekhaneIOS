@@ -54,11 +54,6 @@
     [_webView reload];
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    NSLog(@"webViewDidStartLoad");
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -72,6 +67,10 @@
     [self.webView loadRequest:urlRequest];
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [_loadingIndicator stopAnimating];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

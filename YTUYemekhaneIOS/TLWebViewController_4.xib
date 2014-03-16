@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="backButton" destination="kRx-DK-Osc" id="JAF-Tm-WLA"/>
                 <outlet property="forwardButton" destination="U8p-O7-c1Q" id="x4O-Jo-h8L"/>
+                <outlet property="loadingIndicator" destination="5ms-lx-usU" id="gqX-qZ-n5E"/>
                 <outlet property="refreshButton" destination="Mo0-Ha-3Si" id="Hap-7X-58b"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="webView" destination="HOh-gI-M6x" id="N6s-Pu-3NR"/>
@@ -62,6 +63,11 @@
                         <action selector="refresh:" destination="-1" eventType="touchUpInside" id="fv3-I5-aRs"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5ms-lx-usU">
+                    <rect key="frame" x="142" y="265" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="color" red="0.91372549020000005" green="0.49019607840000001" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

@@ -42,6 +42,8 @@
     int yOffset = 0;
     
     UIFont *labelFont12pt = [UIFont fontWithName:@"Lato-Light" size:12.0f];
+    UIFont *labelFont14pt = [UIFont fontWithName:@"Lato-Light" size:14.0f];
+
     UIFont *headingFont = [UIFont fontWithName:@"Lato-Medium" size:14.0f];
     
     //setting fonts
@@ -74,7 +76,7 @@
             lunch = [self clearCharactersInString:anyFood];
             UILabel *lunchLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, yOffset, _lunchContainer.frame.size.width, 20)];
             lunchLabel.text = lunch;
-            [lunchLabel setFont:labelFont12pt];
+            [lunchLabel setFont:labelFont14pt];
             [_lunchContainer addSubview:lunchLabel];
             yOffset += 15;
             
@@ -88,7 +90,7 @@
             if ([lunch rangeOfString:@"Vjt"].location == NSNotFound) {
                 UILabel *lunchLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, yOffset, _lunchContainer.frame.size.width, 20)];
                 lunchLabel.text = lunch;
-                [lunchLabel setFont:labelFont12pt];
+                [lunchLabel setFont:labelFont14pt];
                 [_lunchContainer addSubview:lunchLabel];
                 yOffset += 15;
             }
@@ -99,7 +101,7 @@
     {
         UILabel *noFoodLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, yOffset, _lunchContainer.frame.size.width, 20)];
         noFoodLabel.text = @"Bugün için öğle yemeği malesef yok.";
-        [noFoodLabel setFont:labelFont12pt];
+        [noFoodLabel setFont:labelFont14pt];
         [_lunchContainer addSubview:noFoodLabel];
     }
 
@@ -115,7 +117,7 @@
             lunch = [self clearCharactersInString:anyFood];
             UILabel *dinnerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, yOffset, _dinnerContainer.frame.size.width, 20)];
             dinnerLabel.text = lunch;
-            [dinnerLabel setFont:labelFont12pt];
+            [dinnerLabel setFont:labelFont14pt];
             [_dinnerContainer addSubview:dinnerLabel];
             yOffset += 15;
             
@@ -128,7 +130,7 @@
             lunch = [self clearCharactersInString:anyFood];
             UILabel *dinnerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, yOffset, _dinnerContainer.frame.size.width, 20)];
             dinnerLabel.text = lunch;
-            [dinnerLabel setFont:labelFont12pt];
+            [dinnerLabel setFont:labelFont14pt];
             [_dinnerContainer addSubview:dinnerLabel];
             yOffset += 15;
             
@@ -139,7 +141,7 @@
 
         UILabel *noFoodLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, yOffset, _dinnerContainer.frame.size.width, 20)];
         noFoodLabel.text = @"Bugün için akşam yemeği malesef yok.";
-        [noFoodLabel setFont:labelFont12pt];
+        [noFoodLabel setFont:labelFont14pt];
         [_dinnerContainer addSubview:noFoodLabel];
     }
 }

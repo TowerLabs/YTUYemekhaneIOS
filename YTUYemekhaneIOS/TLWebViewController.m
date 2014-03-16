@@ -51,13 +51,19 @@
 
 - (IBAction)refresh:(id)sender
 {
-    
+    [_webView reload];
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    NSLog(@"webViewDidStartLoad");
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self openURL];
+    _webView.delegate = self;
 }
 
 - (void)openURL

@@ -42,8 +42,8 @@
     [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:@"Lato-Medium" size:18.0f], NSFontAttributeName,nil] forState:UIControlStateNormal];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:@"Lato-Bold" size:18.0f], NSFontAttributeName,nil]];
     
-    TLFoodViewController *foodViewController = [[TLFoodViewController alloc] initWithNibName:@"TLFoodViewController" bundle:nil];
-    TLAboutViewController *aboutViewController = [[TLAboutViewController alloc] initWithNibName:@"TLAboutViewController" bundle:nil];
+    TLFoodViewController *foodViewController = [[TLFoodViewController alloc] initWithNibByDevice];
+    TLAboutViewController *aboutViewController = [[TLAboutViewController alloc] initWithNibByDevice];
     
     [foodViewController.tabBarItem setTitle:@"Yemek Listesi"];
     [foodViewController.tabBarItem setImage:[UIImage imageNamed:@"foodLight"]];

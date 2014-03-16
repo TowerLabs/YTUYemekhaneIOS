@@ -18,6 +18,7 @@
 @implementation TLFoodCellViewController
 
 #pragma mark - LifeCycle
+
 - (id)initWithFoodDictionary:(NSDictionary *)foodDictionary Date: (NSString *)foodDate
 {
     self = [super initWithNibName:@"TLFoodCellViewController" bundle:nil];

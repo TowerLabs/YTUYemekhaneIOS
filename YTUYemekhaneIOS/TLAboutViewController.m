@@ -19,12 +19,22 @@
 @implementation TLAboutViewController
 
 #pragma mark -LifeCycle
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibByDevice
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if ([[UIScreen mainScreen] bounds].size.height > 480.0f) // retina 4"
+    {
+        self = [super initWithNibName:@"TLAboutViewController_4" bundle:nil];
     }
+    else // retina 3.5"
+    {
+        self = [super initWithNibName:@"TLAboutViewController_3" bundle:nil];
+    }
+    
+    if (self)
+    {
+        
+    }
+    
     return self;
 }
 

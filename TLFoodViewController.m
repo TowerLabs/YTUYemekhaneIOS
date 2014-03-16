@@ -24,13 +24,21 @@
 @implementation TLFoodViewController
 
 #pragma mark - LifeCycle
-#warning TODO: Specify init method for iPhone 4/4S & 5/5S
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibByDevice
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if ([[UIScreen mainScreen] bounds].size.height > 480.0f) // retina 4"
+    {
+        self = [super initWithNibName:@"TLFoodViewController_4" bundle:nil];
+    }
+    else // retina 3.5"
+    {
+        self = [super initWithNibName:@"TLFoodViewController_3" bundle:nil];
+    }
+
+    if (self)
+    {
+
     }
     
     return self;

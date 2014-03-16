@@ -39,6 +39,12 @@
 		6892348318CFC59F00F51295 /* foodLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347B18CFC59F00F51295 /* foodLight@2x.png */; };
 		6892348418CFC59F00F51295 /* TeamLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347C18CFC59F00F51295 /* TeamLight@2x.png */; };
 		6892348518CFC59F00F51295 /* foodDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6892347D18CFC59F00F51295 /* foodDark.png */; };
+		68A6683F18D64B2600CDA1A0 /* forward_tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A6683B18D64B2600CDA1A0 /* forward_tapped.png */; };
+		68A6684018D64B2600CDA1A0 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A6683C18D64B2600CDA1A0 /* forward.png */; };
+		68A6684118D64B2600CDA1A0 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A6683D18D64B2600CDA1A0 /* back.png */; };
+		68A6684218D64B2600CDA1A0 /* back_tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A6683E18D64B2600CDA1A0 /* back_tapped.png */; };
+		68A6684518D64CF700CDA1A0 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A6684318D64CF700CDA1A0 /* refresh.png */; };
+		68A6684618D64CF700CDA1A0 /* refresh_tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A6684418D64CF700CDA1A0 /* refresh_tapped.png */; };
 		68F1B7EC18C20C90004F2436 /* TLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F1B7EA18C20C90004F2436 /* TLWebViewController.m */; };
 		68F1B7ED18C20C90004F2436 /* TLWebViewController_4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F1B7EB18C20C90004F2436 /* TLWebViewController_4.xib */; };
 		6D0A22EA18C8DC51003D132A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0A22E918C8DC51003D132A /* Foundation.framework */; };
@@ -129,6 +135,12 @@
 		6892347B18CFC59F00F51295 /* foodLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foodLight@2x.png"; sourceTree = "<group>"; };
 		6892347C18CFC59F00F51295 /* TeamLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TeamLight@2x.png"; sourceTree = "<group>"; };
 		6892347D18CFC59F00F51295 /* foodDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodDark.png; sourceTree = "<group>"; };
+		68A6683B18D64B2600CDA1A0 /* forward_tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward_tapped.png; sourceTree = "<group>"; };
+		68A6683C18D64B2600CDA1A0 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		68A6683D18D64B2600CDA1A0 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		68A6683E18D64B2600CDA1A0 /* back_tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_tapped.png; sourceTree = "<group>"; };
+		68A6684318D64CF700CDA1A0 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		68A6684418D64CF700CDA1A0 /* refresh_tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh_tapped.png; sourceTree = "<group>"; };
 		68F1B7E918C20C90004F2436 /* TLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLWebViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		68F1B7EA18C20C90004F2436 /* TLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLWebViewController.m; sourceTree = "<group>"; };
 		68F1B7EB18C20C90004F2436 /* TLWebViewController_4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLWebViewController_4.xib; sourceTree = "<group>"; };
@@ -278,6 +290,12 @@
 				6892347A18CFC59F00F51295 /* foodDark@2x.png */,
 				6892347718CFC59F00F51295 /* TeamDark.png */,
 				6892347918CFC59F00F51295 /* TeamDark@2x.png */,
+				68A6683B18D64B2600CDA1A0 /* forward_tapped.png */,
+				68A6683C18D64B2600CDA1A0 /* forward.png */,
+				68A6683D18D64B2600CDA1A0 /* back.png */,
+				68A6683E18D64B2600CDA1A0 /* back_tapped.png */,
+				68A6684318D64CF700CDA1A0 /* refresh.png */,
+				68A6684418D64CF700CDA1A0 /* refresh_tapped.png */,
 			);
 			name = Icons;
 			path = Classes;
@@ -556,6 +574,7 @@
 				6892348418CFC59F00F51295 /* TeamLight@2x.png in Resources */,
 				F5628C7318D4F33600BB1460 /* meryem.png in Resources */,
 				6892348118CFC59F00F51295 /* TeamDark@2x.png in Resources */,
+				68A6684018D64B2600CDA1A0 /* forward.png in Resources */,
 				6837652618D5EAC200F66DC1 /* TLAboutViewController_4.xib in Resources */,
 				6892346318CFB67000F51295 /* Lato-Black.ttf in Resources */,
 				6892346418CFB67000F51295 /* Lato-BlackItalic.ttf in Resources */,
@@ -565,6 +584,7 @@
 				6892346718CFB67000F51295 /* Lato-Hairline.ttf in Resources */,
 				6892348518CFC59F00F51295 /* foodDark.png in Resources */,
 				6837652818D5EC5B00F66DC1 /* TLAboutCellViewController_3.xib in Resources */,
+				68A6684618D64CF700CDA1A0 /* refresh_tapped.png in Resources */,
 				6837652218D5EAB200F66DC1 /* TLAboutCellViewController_4.xib in Resources */,
 				6892346818CFB67000F51295 /* Lato-HairlineItalic.ttf in Resources */,
 				6892346918CFB67000F51295 /* Lato-Heavy.ttf in Resources */,
@@ -573,6 +593,7 @@
 				6892346B18CFB67000F51295 /* Lato-LightItalic.ttf in Resources */,
 				6892346C18CFB67000F51295 /* Lato-Medium.ttf in Resources */,
 				6892346D18CFB67000F51295 /* Lato-MediumItalic.ttf in Resources */,
+				68A6684218D64B2600CDA1A0 /* back_tapped.png in Resources */,
 				6892346E18CFB67000F51295 /* Lato-Regular.ttf in Resources */,
 				6892346F18CFB67000F51295 /* Lato-Semibold.ttf in Resources */,
 				6892347018CFB67000F51295 /* Lato-SemiboldItalic.ttf in Resources */,
@@ -583,6 +604,9 @@
 				6837651C18D5E75E00F66DC1 /* TLFoodViewController_3.xib in Resources */,
 				685DE50F18CA94EE007BD897 /* TeamAboutList.plist in Resources */,
 				68F1B7ED18C20C90004F2436 /* TLWebViewController_4.xib in Resources */,
+				68A6684518D64CF700CDA1A0 /* refresh.png in Resources */,
+				68A6684118D64B2600CDA1A0 /* back.png in Resources */,
+				68A6683F18D64B2600CDA1A0 /* forward_tapped.png in Resources */,
 				6892348018CFC59F00F51295 /* foodLight.png in Resources */,
 				6837652A18D5ED1C00F66DC1 /* TLWebViewController_3.xib in Resources */,
 				6883B91318C22CD500091136 /* Api.plist in Resources */,

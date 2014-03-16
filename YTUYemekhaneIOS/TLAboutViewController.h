@@ -12,6 +12,4 @@
 
 @property (weak, nonatomic) IBOutlet UIView *teamListContainerView;
 
-- (id)initWithNibByDevice;
-
 @end

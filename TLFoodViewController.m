@@ -24,21 +24,13 @@
 @implementation TLFoodViewController
 
 #pragma mark - LifeCycle
+#warning TODO: Specify init method for iPhone 4/4S & 5/5S
 
-- (id)initWithNibByDevice
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if ([[UIScreen mainScreen] bounds].size.height > 480.0f) // retina 4"
-    {
-        self = [super initWithNibName:@"TLFoodViewController_4" bundle:nil];
-    }
-    else // retina 3.5"
-    {
-        self = [super initWithNibName:@"TLFoodViewController_3" bundle:nil];
-    }
-
-    if (self)
-    {
-
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
     }
     
     return self;
@@ -134,39 +126,31 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
     {
         NSLog(@"Error: %@", error);
-        [self operationErrorWithCode:error.code];
     }];
-}
-
-- (void)operationErrorWithCode: (NSInteger)errorCode
-{
-    if (errorCode == -1009 || errorCode == -1007 || errorCode == -1004)
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Bağlanılamıyor" message:@"Yemek listesini görüntüleyebilmek için lütfen internet bağlantınızı kontrol edin." delegate:nil cancelButtonTitle:@"Tamam" otherButtonTitles: nil];
-        [alert show];
-        
-    }
-    else if (errorCode == -1001)
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sunucuya erişim sağlanamıyor" message:@"Lütfen daha sonra tekrar deneyin." delegate:nil cancelButtonTitle:@"Tamam" otherButtonTitles: nil];
-        [alert show];
-        
-    }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sunucu hatası" message:@"Lütfen daha sonra tekrar deneyin." delegate:nil cancelButtonTitle:@"Tamam" otherButtonTitles: nil];
-        [alert show];
-    }
-
 }
 
 -(void)parseJson:( NSString*) jsonResponse
 {
 //    NSLog(@"Data: %@",[jsonResponse JSONValue]);
     self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
+    
+    NSDate *currDate = [NSDate date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
+    [dateFormatter setDateFormat:@"dd.MM.YYYY"];
+    
+    NSString *today = [dateFormatter stringFromDate:currDate];
 
-    int keyOfToday = [self getKeyOfToday];
- 
+    int keyOfToday;
+    
+    for (int i=0; i<_foodArray.count; i++)
+    {
+        if ([[[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0]isEqualToString:today])
+        {
+            keyOfToday = i;
+        }
+    }
     NSInteger end;
     
     if(_foodArray.count <= keyOfToday+10 )
@@ -187,16 +171,18 @@
     for (int i=keyOfToday; i<end; i++)
     {
         
-        TLFoodCellViewController *foodCellViewController = [[TLFoodCellViewController alloc] initWithFoodDictionary:[[[_foodArray objectAtIndex:i] allValues] objectAtIndex:0] Date:[[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0]];
+        TLFoodCellViewController *foodCellViewController = [[TLFoodCellViewController alloc] initWithFoodDictionary:[[[_foodArray objectAtIndex:i] allValues] objectAtIndex:0]];
         
         [foodCellViewController.view setFrame:CGRectMake(currentX, startY, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height)];
         [_scrollView addSubview:foodCellViewController.view];
-//        NSLog(@"CurrentX: %d StartY: %d StartX: %d FWidth: %f FHeight: %f SWidth: %f SHeight: %f",currentX, startY, startX, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height,_scrollView.frame.size.width,_scrollView.frame.size.height);
+        NSLog(@"CurrentX: %d StartY: %d StartX: %d FWidth: %f FHeight: %f SWidth: %f SHeight: %f",currentX, startY, startX, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height,_scrollView.frame.size.width,_scrollView.frame.size.height);
         
         currentX += foodCellViewController.view.frame.size.width;
     }
     
     [_scrollView setContentSize:CGSizeMake(3200,_scrollView.contentSize.height)];
+
+    
 }
 
 #pragma  mark - UIScrollViewDelegate
@@ -213,21 +199,5 @@
     
     self.pageControl.currentPage = pageNumber;
 }
-- (int)getKeyOfToday{
-    NSString *dateKey = @"";
-    NSArray *key = [[NSArray alloc]init];
-    NSInteger tempDay;
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:[NSDate date]];
-    NSInteger today = [components day];
-    for (int i=0; i<_foodArray.count; i++)
-    {
-        dateKey = [[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0];
-        key = [dateKey componentsSeparatedByString:@"."];
-        tempDay = [[key objectAtIndex:0]integerValue];
-        if (tempDay >= today) {
-            return i;
-        }
-    }
-    return 0;
-}
+
 @end

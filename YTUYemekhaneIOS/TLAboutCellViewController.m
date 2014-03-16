@@ -20,15 +20,7 @@
 #pragma mark - LifeCycle
 - (id)initWithDeveloperInfo: (NSDictionary *)infoDictionary
 {
-    if ([[UIScreen mainScreen] bounds].size.height > 480.0f) // retina 4"
-    {
-        self = [super initWithNibName:@"TLAboutCellViewController_4" bundle:nil];
-    }
-    else // retina 3.5"
-    {
-        self = [super initWithNibName:@"TLAboutCellViewController_3" bundle:nil];
-    }
-
+    self = [super initWithNibName:@"TLAboutCellViewController" bundle:nil];
     if (self)
     {
         self.infoDictionary = [[NSDictionary alloc] initWithDictionary:infoDictionary];
@@ -53,7 +45,7 @@
     
     [_siteLabel setTitle:twitter forState:UIControlStateNormal];
     [_siteLabel.titleLabel setFont:DELEGATE.projectFont];
-    [_icon setImage:[UIImage imageNamed:[_infoDictionary valueForKey:@"image"]]];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -18,14 +18,7 @@
 
 - (id)initWithURL:(NSURL *)twitterURL
 {
-    if ([[UIScreen mainScreen] bounds].size.height > 480.0f) // retina 4"
-    {
-        self = [super initWithNibName:@"TLWebViewController_4" bundle:nil];
-    }
-    else // retina 3.5"
-    {
-        self = [super initWithNibName:@"TLWebViewController_3" bundle:nil];
-    }
+    self = [super initWithNibName:@"TLWebViewController" bundle:nil];
     if (self)
     {
         self.twitterURL = twitterURL;

@@ -80,7 +80,7 @@
     for (NSString *anyFood in altLunchList)
     {
         lunch = [self clearCharactersInString:anyFood];
-        if (![lunch isEqualToString:@"Vjt. Yemek:"] && ![lunch isEqualToString:@"Vjt. Yemek;"]) {
+        if ([lunch rangeOfString:@"Vjt"].location == NSNotFound) {
             UILabel *lunchLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, yOffset, _lunchContainer.frame.size.width, 20)];
             lunchLabel.text = lunch;
             [lunchLabel setFont:labelFont12pt];

@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *siteLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *icon;
+
 
 - (id)initWithDeveloperInfo: (NSDictionary *)infoDictionary;
 - (IBAction)openWebView:(id)sender;

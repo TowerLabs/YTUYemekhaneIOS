@@ -10,8 +10,10 @@
 
 @interface TLFoodViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIView *todaysFoodView;
-@property (weak, nonatomic) IBOutlet UIView *todaysFoodViewContainer;
-@property (weak, nonatomic) IBOutlet UILabel *Test;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+
+- (id)initWithNibByDevice;
 
 @end

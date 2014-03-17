@@ -18,7 +18,14 @@
 
 - (id)initWithURL:(NSURL *)twitterURL
 {
-    self = [super initWithNibName:@"TLWebViewController" bundle:nil];
+    if ([[UIScreen mainScreen] bounds].size.height > 480.0f) // retina 4"
+    {
+        self = [super initWithNibName:@"TLWebViewController_4" bundle:nil];
+    }
+    else // retina 3.5"
+    {
+        self = [super initWithNibName:@"TLWebViewController_3" bundle:nil];
+    }
     if (self)
     {
         self.twitterURL = twitterURL;
@@ -26,10 +33,32 @@
     return self;
 }
 
+- (IBAction)goBack:(id)sender
+{
+    if ([_webView canGoBack])
+    {
+        [_webView goBack];
+    }
+}
+
+- (IBAction)goForward:(id)sender
+{
+    if ([_webView canGoForward])
+    {
+        [_webView goForward];
+    }
+}
+
+- (IBAction)refresh:(id)sender
+{
+    [_webView reload];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self openURL];
+    _webView.delegate = self;
 }
 
 - (void)openURL
@@ -38,6 +67,10 @@
     [self.webView loadRequest:urlRequest];
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [_loadingIndicator stopAnimating];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

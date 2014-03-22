@@ -11,9 +11,9 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
-    #import "TLAppDelegate.h"
-    #define DELEGATE ((TLAppDelegate *)[[UIApplication sharedApplication] delegate])
-    //AppDelegate'te olsuturulan her seye istedigimiz yerden erisebilmemizi saglayacak. Orn: navigationController -> DELEGATE.navigationController
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "TLAppDelegate.h"
+#define DELEGATE ((TLAppDelegate *)[[UIApplication sharedApplication] delegate])
+//AppDelegate'te olsuturulan her seye istedigimiz yerden erisebilmemizi saglayacak. Orn: navigationController -> DELEGATE.navigationController
 #endif

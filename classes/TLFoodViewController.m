@@ -103,19 +103,18 @@
     }
     else
     {
-        if(1 == _day || 2 == _day)
+        
+        if([self validateData])
         {
-            NSLog(@"Sifirdan cekiyorum");
-            
-            [self retrieveDataFromAPI];
-        }
-        else
-        {
-            NSLog(@"Sifirdan cekmeme gerek yok");
-            
             NSString *APIData = [[NSUserDefaults standardUserDefaults] valueForKey:@"APIData"];
             
             [self parseJson:APIData];
+            NSLog(@"Sifirdan cekmeme gerek yok data valid.");
+        }
+        else
+        {
+            NSLog(@"Sifirdan cekiyorum data eski.");
+            [self retrieveDataFromAPI];
         }
     }
 }
@@ -177,7 +176,7 @@
 
 -(void)parseJson:( NSString*) jsonResponse
 {
-//    NSLog(@"Data: %@",[jsonResponse JSONValue]);
+    //NSLog(@"Data: %@",[jsonResponse JSONValue]);
     self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
 
 
@@ -207,6 +206,7 @@
             
             NSLog(@"%d-%ld",keyOfToday,(long)end);
             _pageControl.numberOfPages = end - keyOfToday +1;
+
             int startX= 0;
             int startY= 0;
             int currentX = startX;
@@ -220,8 +220,6 @@
                 
                 [foodCellViewController.view setFrame:CGRectMake(currentX, startY, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height)];
                 [_scrollView addSubview:foodCellViewController.view];
-                //        NSLog(@"CurrentX: %d StartY: %d StartX: %d FWidth: %f FHeight: %f SWidth: %f SHeight: %f",currentX, startY, startX, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height,_scrollView.frame.size.width,_scrollView.frame.size.height);
-                
                 currentX += foodCellViewController.view.frame.size.width;
             }
             
@@ -230,6 +228,7 @@
     }
     else
     {
+        NSLog(@"Henüz yayınlanmadı.");
         [self printErrorView:@"Güncel yemek menüsü sks.yildiz.edu.tr adresinde henüz yayınlanmadı."];
     }
 
@@ -238,14 +237,14 @@
 #pragma  mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-//    NSLog(@"scroll");
     //Scroll işlemi bittiğinde içeriğin x koordinatı
     int xCoordinate = scrollView.contentOffset.x;
-//    NSLog(@"X Coord: %d",xCoordinate);
     
+    //NSLog(@"X Coord: %d",xCoordinate);
     //x koordinatı / 320 bize index numarasını verecektir.
+    
     int pageNumber = (xCoordinate / (_scrollView.frame.size.width));
-//    NSLog(@"Page Number: %d",pageNumber);
+    //    NSLog(@"Page Number: %d",pageNumber);
     
     self.pageControl.currentPage = pageNumber;
 }
@@ -280,5 +279,20 @@
     dontHaveCurrentMenuLabel.numberOfLines = 3;
     dontHaveCurrentMenuLabel.textAlignment = NSTextAlignmentCenter;
     
+}
+-(BOOL)validateData{
+    NSString *APIData =[[NSUserDefaults standardUserDefaults] valueForKey:@"APIData"];
+    NSMutableArray *tempData = [[NSMutableArray alloc]initWithArray:[APIData JSONValue]];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]];
+    NSInteger curMonth = [components month];
+    
+    if (curMonth == [[[[[[tempData objectAtIndex:0] allKeys]objectAtIndex:0]componentsSeparatedByString:@"."]objectAtIndex:1]integerValue])
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 @end

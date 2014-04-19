@@ -31,6 +31,7 @@
 @property (nonatomic,strong) NSDateComponents *dateComponents;
 @property (nonatomic,strong) NSString *todaysDate;
 @property NSInteger day;
+@property BOOL isAttempted;
 
 @end
 
@@ -48,10 +49,10 @@
     {
         self = [super initWithNibName:@"TLFoodViewController_3" bundle:nil];
     }
-
+    
     if (self)
     {
-
+        
     }
     
     return self;
@@ -70,6 +71,8 @@
             [label setFont:DELEGATE.projectFont];
         }
     }
+    
+    self.isAttempted = NO;
     
     [self loadDataWithDate:_todaysDate];
 }
@@ -98,7 +101,7 @@
     
     if (nil == dataLastReceived)
     {
-        NSLog(@"Daha once hic yazilmamis");
+        NSLog(@"Daha önce hiç veri yazılmamış, şimdi yazılacak.");
         [self retrieveDataFromAPI];
     }
     else
@@ -109,11 +112,11 @@
             NSString *APIData = [[NSUserDefaults standardUserDefaults] valueForKey:@"APIData"];
             
             [self parseJson:APIData];
-            NSLog(@"Sifirdan cekmeme gerek yok data valid.");
+            NSLog(@"Daha önce bir kere veri yazılmış ve valid görünüyor.");
         }
         else
         {
-            NSLog(@"Sifirdan cekiyorum data eski.");
+            NSLog(@"Daha önce veri çekilmiş fakat eski görünüyor.");
             [self retrieveDataFromAPI];
         }
     }
@@ -130,7 +133,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-
+    
     NSString *pathForPlist = [[NSBundle mainBundle] pathForResource:@"api" ofType:@"plist"];
     NSMutableDictionary *apiDict = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForPlist];
     NSString *apiUrl = [[NSString alloc] initWithString:[apiDict valueForKey:@"apiUrl"]];
@@ -141,13 +144,15 @@
         [[NSUserDefaults standardUserDefaults] setValue:[operation responseString] forKey:@"APIData"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
+        NSLog(@"API'den veri alınıyor.");
+        
         [self parseJson:[operation responseString]];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
-    {
-        NSLog(@"Error: %@", error);
-        [self operationErrorWithCode:error.code];
-    }];
+     {
+         NSLog(@"Error: %@", error);
+         [self operationErrorWithCode:error.code];
+     }];
 }
 
 - (void)operationErrorWithCode: (NSInteger)errorCode
@@ -171,25 +176,35 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sunucu hatası" message:@"Lütfen daha sonra tekrar deneyin." delegate:nil cancelButtonTitle:@"Tamam" otherButtonTitles: nil];
         [alert show];
     }
-
+    
 }
 
 -(void)parseJson:( NSString*) jsonResponse
 {
     //NSLog(@"Data: %@",[jsonResponse JSONValue]);
     self.foodArray = [[NSMutableArray alloc]initWithArray:[jsonResponse JSONValue]];
-
-
+    
+    NSLog(@"parse ediyorm");
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]];
     NSInteger curMonth = [components month];
-   
+    
     if (curMonth == [[[[[[self.foodArray objectAtIndex:0] allKeys]objectAtIndex:0]componentsSeparatedByString:@"."]objectAtIndex:1]integerValue]){
         
         int keyOfToday = [self getKeyOfToday];
         
         if ( -1 == keyOfToday)
         {
-            [self printErrorView:@"Bu ay için görüntülenecek yemek menüsü kalmadı."];
+            if (!_isAttempted)
+            {
+                NSLog(@"Veri çekildi fakat bugün için yemek bulunamadı, baştan deneyeceğim.");
+                _isAttempted = YES;
+                [self retrieveDataFromAPI];
+            }
+            else
+            {
+                NSLog(@"Error basiyorum");
+                [self printErrorView:@"Bu ay için görüntülenecek yemek menüsü kalmadı."];
+            }
         }
         else
         {
@@ -206,7 +221,7 @@
             
             NSLog(@"%d-%ld",keyOfToday,(long)end);
             _pageControl.numberOfPages = end - keyOfToday +1;
-
+            
             int startX= 0;
             int startY= 0;
             int currentX = startX;
@@ -231,7 +246,7 @@
         NSLog(@"Henüz yayınlanmadı.");
         [self printErrorView:@"Güncel yemek menüsü sks.yildiz.edu.tr adresinde henüz yayınlanmadı."];
     }
-
+    
 }
 
 #pragma  mark - UIScrollViewDelegate

@@ -185,53 +185,52 @@
     NSInteger curMonth = [components month];
    
     if (curMonth == [[[[[[self.foodArray objectAtIndex:0] allKeys]objectAtIndex:0]componentsSeparatedByString:@"."]objectAtIndex:1]integerValue]){
-        int keyOfToday = [self getKeyOfToday];
-        NSInteger end;
         
-        if(_foodArray.count <= keyOfToday+10 )
+        int keyOfToday = [self getKeyOfToday];
+        
+        if ( -1 == keyOfToday)
         {
-            end = _foodArray.count-1;
+            [self printErrorView:@"Bu ay için görüntülenecek yemek menüsü kalmadı."];
         }
         else
         {
-            end = keyOfToday + 10;
+            NSInteger end;
+            
+            if(_foodArray.count <= keyOfToday+10 )
+            {
+                end = _foodArray.count-1;
+            }
+            else
+            {
+                end = keyOfToday + 10;
+            }
+            
+            NSLog(@"%d-%ld",keyOfToday,(long)end);
+            _pageControl.numberOfPages = end - keyOfToday +1;
+            int startX= 0;
+            int startY= 0;
+            int currentX = startX;
+            
+            [_loadingIndicator stopAnimating];
+            
+            for (int i=keyOfToday; i<=end; i++)
+            {
+                
+                TLFoodCellViewController *foodCellViewController = [[TLFoodCellViewController alloc] initWithFoodDictionary:[[[_foodArray objectAtIndex:i] allValues] objectAtIndex:0] Date:[[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0]];
+                
+                [foodCellViewController.view setFrame:CGRectMake(currentX, startY, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height)];
+                [_scrollView addSubview:foodCellViewController.view];
+                //        NSLog(@"CurrentX: %d StartY: %d StartX: %d FWidth: %f FHeight: %f SWidth: %f SHeight: %f",currentX, startY, startX, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height,_scrollView.frame.size.width,_scrollView.frame.size.height);
+                
+                currentX += foodCellViewController.view.frame.size.width;
+            }
+            
+            [_scrollView setContentSize:CGSizeMake(320 * (_pageControl.numberOfPages),_scrollView.contentSize.height)];
         }
-        
-        NSLog(@"%d-%ld",keyOfToday,(long)end);
-        _pageControl.numberOfPages = end - keyOfToday +1;
-        int startX= 0;
-        int startY= 0;
-        int currentX = startX;
-        
-        [_loadingIndicator stopAnimating];
-        
-        for (int i=keyOfToday; i<=end; i++)
-        {
-            
-            TLFoodCellViewController *foodCellViewController = [[TLFoodCellViewController alloc] initWithFoodDictionary:[[[_foodArray objectAtIndex:i] allValues] objectAtIndex:0] Date:[[[_foodArray objectAtIndex:i] allKeys]objectAtIndex:0]];
-            
-            [foodCellViewController.view setFrame:CGRectMake(currentX, startY, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height)];
-            [_scrollView addSubview:foodCellViewController.view];
-            //        NSLog(@"CurrentX: %d StartY: %d StartX: %d FWidth: %f FHeight: %f SWidth: %f SHeight: %f",currentX, startY, startX, foodCellViewController.view.frame.size.width, foodCellViewController.view.frame.size.height,_scrollView.frame.size.width,_scrollView.frame.size.height);
-            
-            currentX += foodCellViewController.view.frame.size.width;
-        }
-        
-        [_scrollView setContentSize:CGSizeMake(320 * (_pageControl.numberOfPages),_scrollView.contentSize.height)];
     }
     else
     {
-        [_loadingIndicator stopAnimating];
-        _pageControl.numberOfPages = 0;
-        
-        UILabel * dontHaveCurrentMenuLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 100, 280, 200)];
-        dontHaveCurrentMenuLabel.backgroundColor = [UIColor whiteColor];
-        dontHaveCurrentMenuLabel.text = @"Güncel yemek menüsü sks.yildiz.edu.tr adresinde henüz yayınlanmadı.";
-        dontHaveCurrentMenuLabel.font= DELEGATE.projectFont;
-        dontHaveCurrentMenuLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        [self.view addSubview:dontHaveCurrentMenuLabel];
-        dontHaveCurrentMenuLabel.numberOfLines = 3;
-        dontHaveCurrentMenuLabel.textAlignment = NSTextAlignmentCenter;
+        [self printErrorView:@"Güncel yemek menüsü sks.yildiz.edu.tr adresinde henüz yayınlanmadı."];
     }
 
 }
@@ -265,6 +264,21 @@
             return i;
         }
     }
-    return 0;
+    return -1;
+}
+-(void)printErrorView: (NSString*) message
+{
+    [_loadingIndicator stopAnimating];
+    _pageControl.numberOfPages = 0;
+    
+    UILabel * dontHaveCurrentMenuLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 100, 280, 200)];
+    dontHaveCurrentMenuLabel.backgroundColor = [UIColor whiteColor];
+    dontHaveCurrentMenuLabel.text = message;
+    dontHaveCurrentMenuLabel.font= DELEGATE.projectFont;
+    dontHaveCurrentMenuLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    [self.view addSubview:dontHaveCurrentMenuLabel];
+    dontHaveCurrentMenuLabel.numberOfLines = 3;
+    dontHaveCurrentMenuLabel.textAlignment = NSTextAlignmentCenter;
+    
 }
 @end

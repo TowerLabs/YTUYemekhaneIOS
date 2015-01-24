@@ -12,20 +12,28 @@
 	<dict>
 		<key>548157D538672CD1C956562590395EA406EB475F</key>
 		<string>https://github.com/s/s.github.io</string>
+		<key>D77AD306722A68A21601528275A1A9B8F6A5C04B</key>
+		<string>https://github.com/TowerLabs/YTUYemekhaneIOS.git</string>
+		<key>FFA96E6F2E19C6943C600696E0D86876FC3E0DCE</key>
+		<string>https://github.com/TowerLabs/YTUYemekhaneIOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TowerLabs/YildizYemek/YildizYemek.xcodeproj</string>
+	<string>YildizYemek.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>548157D538672CD1C956562590395EA406EB475F</key>
-		<string>../../../..</string>
+		<string>../../..</string>
+		<key>D77AD306722A68A21601528275A1A9B8F6A5C04B</key>
+		<string>../..</string>
+		<key>FFA96E6F2E19C6943C600696E0D86876FC3E0DCE</key>
+		<string>../../../YTUYemekhaneIOS</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/s/s.github.io</string>
+	<string>https://github.com/TowerLabs/YTUYemekhaneIOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>548157D538672CD1C956562590395EA406EB475F</string>
+	<string>D77AD306722A68A21601528275A1A9B8F6A5C04B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +42,23 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>548157D538672CD1C956562590395EA406EB475F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Github</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D77AD306722A68A21601528275A1A9B8F6A5C04B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YildizYemek</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FFA96E6F2E19C6943C600696E0D86876FC3E0DCE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YTUYemekhaneIOS</string>
 		</dict>
 	</array>
 </dict>

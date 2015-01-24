@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TWLFoodListViewController : UIViewController
+@interface TWLFoodListViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+@property (strong, nonatomic) UIPageViewController *pageController;
 
 @end
 
